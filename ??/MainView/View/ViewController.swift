@@ -97,13 +97,13 @@ class ViewController: UIViewController {
 //MARK: - Extensions
 extension ViewController: MainViewProtocol {
    
-    func succes() {
-        myTableView.reloadData()
-    }
-    
-    func failure(error: Error) {
-        print(error.localizedDescription)
-    }
+//    func succes() {
+//        myTableView.reloadData()
+//    }
+//    
+//    func failure(error: Error) {
+//        print(error.localizedDescription)
+//    }
     
     @objc func handleRefreshControl(sender: UIRefreshControl) {
         self.results.shuffle()
@@ -143,9 +143,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let img = catchPhotos(view: self, picker: picker, info: info)
-        var shootedImages = ShootedImages.shared
-        shootedImages.savePhoto(data: img)
+        presenter?.receivePhoto(view: self, picker: picker, info: info)
     }
     
 }

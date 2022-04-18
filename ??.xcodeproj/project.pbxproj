@@ -13,14 +13,16 @@
 		CE30982827FB2FD70020D576 /* CatchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982727FB2FD70020D576 /* CatchPhotos.swift */; };
 		CE30982B28044C5D0020D576 /* SixthViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982A28044C5D0020D576 /* SixthViewPresenter.swift */; };
 		CE30982F28044E3A0020D576 /* AnimationWithRoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982E28044E3A0020D576 /* AnimationWithRoundedImage.swift */; };
+		CE309872280AEE410020D576 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE309871280AEE410020D576 /* CoreData.framework */; };
+		CE309875280AEE600020D576 /* ??.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE309873280AEE600020D576 /* ??.xcdatamodeld */; };
 		CE3B9BE627C5889100C588C9 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BE527C5821400C588C9 /* FourthViewController.swift */; };
 		CE3B9C7727CAF39B00C588C9 /* PanDirectionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9C7627CAF39B00C588C9 /* PanDirectionGestureRecognizer.swift */; };
-		CE81497527E224B100DF6BB8 /* Model for making photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81497427E224B100DF6BB8 /* Model for making photos.swift */; };
 		CE8E0C3927CE2CC6009984BD /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8E0C3827CE2CBD009984BD /* billabong.ttf */; };
 		CE8E0C3B27CE2CD8009984BD /* Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E0C3A27CE2CD8009984BD /* Dismiss.swift */; };
 		CEA6068627CCBA9E0005639D /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6068527CCBA9E0005639D /* Present.swift */; };
 		CEA6068A27CCBE3E0005639D /* ImagePreviewFullViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6068927CCBE3E0005639D /* ImagePreviewFullViewCell.swift */; };
 		CEA6068C27CCD7230005639D /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6068B27CCD7230005639D /* ProfilePhotoViewController.swift */; };
+		CEB03E1C280AF295005D98B3 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB03E1B280AF295005D98B3 /* DatabaseHandler.swift */; };
 		CEB49D6F27AC305B00C5E189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB49D6E27AC305B00C5E189 /* Assets.xcassets */; };
 		CEB49D7227AC305B00C5E189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB49D7027AC305B00C5E189 /* LaunchScreen.storyboard */; };
 		CEB49D7D27AC305B00C5E189 /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB49D7C27AC305B00C5E189 /* __Tests.swift */; };
@@ -81,14 +83,16 @@
 		CE30982727FB2FD70020D576 /* CatchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchPhotos.swift; sourceTree = "<group>"; };
 		CE30982A28044C5D0020D576 /* SixthViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewPresenter.swift; sourceTree = "<group>"; };
 		CE30982E28044E3A0020D576 /* AnimationWithRoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWithRoundedImage.swift; sourceTree = "<group>"; };
+		CE309871280AEE410020D576 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE309874280AEE600020D576 /* ShootedeImages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShootedeImages.xcdatamodel; sourceTree = "<group>"; };
 		CE3B9BE527C5821400C588C9 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CE3B9C7627CAF39B00C588C9 /* PanDirectionGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanDirectionGestureRecognizer.swift; sourceTree = "<group>"; };
-		CE81497427E224B100DF6BB8 /* Model for making photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model for making photos.swift"; sourceTree = "<group>"; };
 		CE8E0C3827CE2CBD009984BD /* billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.ttf; sourceTree = "<group>"; };
 		CE8E0C3A27CE2CD8009984BD /* Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dismiss.swift; path = "../../../../../Downloads/SwiftPhotoGallery-develop 2/Example/SwiftPhotoGallery/Dismiss.swift"; sourceTree = "<group>"; };
 		CEA6068527CCBA9E0005639D /* Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
 		CEA6068927CCBE3E0005639D /* ImagePreviewFullViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewFullViewCell.swift; sourceTree = "<group>"; };
 		CEA6068B27CCD7230005639D /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
+		CEB03E1B280AF295005D98B3 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseHandler.swift; path = "/Users/user/Desktop/study/??/??/Service/DatabaseHandler.swift"; sourceTree = "<absolute>"; };
 		CEB49D6227AC305900C5E189 /* ??.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "??.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB49D6527AC305900C5E189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB49D6E27AC305B00C5E189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE309872280AEE410020D576 /* CoreData.framework in Frameworks */,
 				8BF9CBF7E12460CD64290D6B /* Pods___.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +161,7 @@
 		6106A523B746FF9731DE3DDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE309871280AEE410020D576 /* CoreData.framework */,
 				C9CBBE6BAEF179DA9AED7655 /* Pods___.framework */,
 				8FAF4F17C083D817B958DBAF /* Pods______UITests.framework */,
 				A07507F1FCAFE7654E97196E /* Pods___Tests.framework */,
@@ -285,6 +291,7 @@
 		CEB49DE027AC375400C5E189 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CEB03E1B280AF295005D98B3 /* DatabaseHandler.swift */,
 				CE30982E28044E3A0020D576 /* AnimationWithRoundedImage.swift */,
 				CEA6068527CCBA9E0005639D /* Present.swift */,
 				CE8E0C3A27CE2CD8009984BD /* Dismiss.swift */,
@@ -301,7 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB49DE227AC375500C5E189 /* Model for internet photos.swift */,
-				CE81497427E224B100DF6BB8 /* Model for making photos.swift */,
+				CE309873280AEE600020D576 /* ??.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -686,6 +693,7 @@
 				CEC4C0A927F4927C00A558B9 /* ViewAfterShootingViewController.swift in Sources */,
 				CED7F98327E8603700143C09 /* SixthViewController.swift in Sources */,
 				CE3B9BE627C5889100C588C9 /* FourthViewController.swift in Sources */,
+				CEB03E1C280AF295005D98B3 /* DatabaseHandler.swift in Sources */,
 				CEE9CC1C27BAA9AA0076461F /* FifthViewController.swift in Sources */,
 				CEE9CC1D27BAA9AA0076461F /* FirstTableViewCell.swift in Sources */,
 				CEE9CC1E27BAA9AA0076461F /* SecondTableViewCell.swift in Sources */,
@@ -703,6 +711,7 @@
 				CEB49E0D27AD328B00C5E189 /* DetailedCollectionViewCell.swift in Sources */,
 				CEB49E0827AC38B600C5E189 /* DetailedSearchViewController.swift in Sources */,
 				CEB49DFE27AC385400C5E189 /* NetworkService.swift in Sources */,
+				CE309875280AEE600020D576 /* ??.xcdatamodeld in Sources */,
 				CEB49DFF27AC385400C5E189 /* Router.swift in Sources */,
 				CED43A4F27DE421B004DE149 /* HeroViewPresenter.swift in Sources */,
 				CEB49E0027AC385400C5E189 /* Model for internet photos.swift in Sources */,
@@ -714,7 +723,6 @@
 				CEA6068627CCBA9E0005639D /* Present.swift in Sources */,
 				CEB49DBE27AC34C100C5E189 /* ChatViewController.swift in Sources */,
 				CEB49DC327AC34C100C5E189 /* OptionViewController.swift in Sources */,
-				CE81497527E224B100DF6BB8 /* Model for making photos.swift in Sources */,
 				CEB49DB727AC34AF00C5E189 /* AppDelegate.swift in Sources */,
 				CEB49DB827AC34AF00C5E189 /* AssemblyModelBuilder.swift in Sources */,
 			);
@@ -1064,6 +1072,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE309873280AEE600020D576 /* ??.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE309874280AEE600020D576 /* ShootedeImages.xcdatamodel */,
+			);
+			currentVersion = CE309874280AEE600020D576 /* ShootedeImages.xcdatamodel */;
+			path = "??.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEB49D5A27AC305900C5E189 /* Project object */;
 }

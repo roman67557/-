@@ -68,7 +68,7 @@ class Router: RouterProtocol {
     func openCameraView(view: UIViewController) {
         let cameraView = UIImagePickerController()
         cameraView.sourceType = .camera
-        cameraView.delegate = view as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        cameraView.delegate = view.self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         view.present(cameraView, animated: true)
     }
 }

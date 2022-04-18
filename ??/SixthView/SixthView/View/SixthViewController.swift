@@ -14,7 +14,6 @@ protocol Animation: AnyObject {
 class SixthViewController: UIViewController, Animation {
     
     var presenter: SixthViewPresenterProtocol?
-    let cameraView = UIImagePickerController()
     var myPhotoImageView = UIImageView()
     private var myPhotoImage = UIImage()
     lazy var collectionView: UICollectionView = {
@@ -41,10 +40,14 @@ class SixthViewController: UIViewController, Animation {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationController?.delegate = self
-        collectionView.reloadData()
-        cameraView.delegate = self
+        shootedImages = DatabaseHandler.shared.retrieveData()
         
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView.reloadData()
     }
     
     func setup() {
@@ -101,16 +104,6 @@ class SixthViewController: UIViewController, Animation {
         collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
     }
     
-    @objc func moveToProfilePhoto(_ sender: Any) {
-        let profilePhotoVC = ProfilePhotoViewController()
-        navigationController?.pushViewController(profilePhotoVC, animated: true)
-    }
-    
-    @objc func pushOptionViewController() {
-        cameraView.sourceType = .camera
-        present(cameraView, animated: true)
-    }
-    
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if fromVC is Animation && toVC is Animation {
             switch operation {
@@ -138,7 +131,7 @@ extension SixthViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shootedImages.imgs.count
+        return shootedImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -147,7 +140,8 @@ extension SixthViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFill
         imgView.frame = cell.bounds
-        imgView.image = shootedImages.imgs[indexPath.row]
+        guard let data = shootedImages[indexPath.row].img else { return UICollectionViewCell() }
+        imgView.image = UIImage(data: data)
         cell.addSubview(imgView)
         return cell
     }
@@ -161,15 +155,20 @@ extension SixthViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension SixthViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-        shootedImages.savePhoto(data: pickedImage)
-        collectionView.reloadData()
-        picker.dismiss(animated: true)
+        presenter?.receivePhoto(view: self, picker: picker, info: info)
     }
     
 }
 
 extension SixthViewController: SixthViewProtocol {
+    
+    @objc func moveToProfilePhoto(_ sender: Any) {
+        presenter?.moveToProfilePhoto(view: self)
+    }
+    
+    @objc func pushOptionViewController() {
+        presenter?.openCamera(view: self)
+    }
     
 }
 

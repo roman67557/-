@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:??/Service/Models/ShooterdImages+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/user/Desktop/study/??/??/Service/DatabaseHandler.swift">
+   </FileRef>
+   <FileRef
+      location = "group:??/Service/Models/ShooterdImages+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:??.xcodeproj">
    </FileRef>
    <FileRef

@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 protocol MainViewProtocol: AnyObject {
-    func succes()
-    func failure(error: Error)
+//    func succes()
+//    func failure(error: Error)
     func handleRefreshControl(sender: UIRefreshControl)
 }
 
@@ -18,6 +18,7 @@ protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void)
     func openCamera(view: UIViewController)
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any])
 }
 
 class MainViewPresenter: MainViewPresenterProtocol {
@@ -59,6 +60,10 @@ class MainViewPresenter: MainViewPresenterProtocol {
             print("ERROR @(!#*!*$JDWQJSDSAMC<SAC>CXX>", JSONError)
             return nil
         }
+    }
+    
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {
+        catchPhotos(view: view, picker: picker, info: info)
     }
     
 }

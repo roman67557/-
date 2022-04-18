@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
-var shootedImages = ShootedImages.shared
+//var shootedImages = ShootedImages.shared
+var shootedImages = [ShooterdImages]()
 
-func catchPhotos(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) -> UIImage {
-    guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return UIImage() }
+func catchPhotos(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {
+    if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        
+        DatabaseHandler.shared.saveImage(img: pickedImage)
+        shootedImages = DatabaseHandler.shared.retrieveData()
+    } else { return }
     picker.dismiss(animated: true)
-    shootedImages.savePhoto(data: pickedImage)
-    return pickedImage
 }

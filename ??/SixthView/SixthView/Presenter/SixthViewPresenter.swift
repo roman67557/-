@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SixthViewProtocol {
-    
+    func moveToProfilePhoto(_ sender: Any)
+    func pushOptionViewController()
 }
 
 protocol SixthViewPresenterProtocol {
     init(view: SixthViewProtocol, router: RouterProtocol)
+    func moveToProfilePhoto(view: UIViewController)
+    func openCamera(view: UIViewController)
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any])
 }
 
 class SixthViewPresenter: SixthViewPresenterProtocol {
@@ -23,6 +28,19 @@ class SixthViewPresenter: SixthViewPresenterProtocol {
     required init(view: SixthViewProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
+    }
+    
+    func moveToProfilePhoto(view: UIViewController) {
+        let profilePhotoVC = ProfilePhotoViewController()
+        view.navigationController?.pushViewController(profilePhotoVC, animated: true)
+    }
+    
+    func openCamera(view: UIViewController) {
+        router?.openCameraView(view: view)
+    }
+    
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {
+        catchPhotos(view: view, picker: picker, info: info)
     }
     
 }
