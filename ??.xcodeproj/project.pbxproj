@@ -46,6 +46,7 @@
 		CEB49E0D27AD328B00C5E189 /* DetailedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB49E0C27AD328B00C5E189 /* DetailedCollectionViewCell.swift */; };
 		CEC4C0A927F4927C00A558B9 /* ViewAfterShootingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4C0A827F4927C00A558B9 /* ViewAfterShootingViewController.swift */; };
 		CEC4C0AD27F496CE00A558B9 /* ViewAfterShootingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4C0AC27F496CE00A558B9 /* ViewAfterShootingPresenter.swift */; };
+		CECDC0BA280F0D040068763F /* decodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC0B9280F0D040068763F /* decodeJSON.swift */; };
 		CED43A4F27DE421B004DE149 /* HeroViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED43A4E27DE421B004DE149 /* HeroViewPresenter.swift */; };
 		CED7F98327E8603700143C09 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7F98227E85EF400143C09 /* SixthViewController.swift */; };
 		CEE9CC1C27BAA9AA0076461F /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9CC1927BAA8EE0076461F /* FifthViewController.swift */; };
@@ -120,6 +121,7 @@
 		CEB49E0C27AD328B00C5E189 /* DetailedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC4C0A827F4927C00A558B9 /* ViewAfterShootingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAfterShootingViewController.swift; sourceTree = "<group>"; };
 		CEC4C0AC27F496CE00A558B9 /* ViewAfterShootingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAfterShootingPresenter.swift; sourceTree = "<group>"; };
+		CECDC0B9280F0D040068763F /* decodeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decodeJSON.swift; sourceTree = "<group>"; };
 		CED43A4E27DE421B004DE149 /* HeroViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewPresenter.swift; sourceTree = "<group>"; };
 		CED7F98227E85EF400143C09 /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		CEE9CC1827BAA8EE0076461F /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				CEB49DE327AC375500C5E189 /* Router.swift */,
 				CE3B9C7627CAF39B00C588C9 /* PanDirectionGestureRecognizer.swift */,
 				CE30982727FB2FD70020D576 /* CatchPhotos.swift */,
+				CECDC0B9280F0D040068763F /* decodeJSON.swift */,
 				CEB49DEA27AC376200C5E189 /* Models */,
 			);
 			path = Service;
@@ -722,6 +725,7 @@
 				CEC4C0AD27F496CE00A558B9 /* ViewAfterShootingPresenter.swift in Sources */,
 				CEA6068627CCBA9E0005639D /* Present.swift in Sources */,
 				CEB49DBE27AC34C100C5E189 /* ChatViewController.swift in Sources */,
+				CECDC0BA280F0D040068763F /* decodeJSON.swift in Sources */,
 				CEB49DC327AC34C100C5E189 /* OptionViewController.swift in Sources */,
 				CEB49DB727AC34AF00C5E189 /* AppDelegate.swift in Sources */,
 				CEB49DB827AC34AF00C5E189 /* AssemblyModelBuilder.swift in Sources */,

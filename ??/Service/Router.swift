@@ -24,11 +24,10 @@ protocol RouterProtocol: RouterMain {
 class Router: RouterProtocol {
     
     var tabBarController: UITabBarController?
-    var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
     
-    init(navigationController: UITabBarController, assemblyBuilder: AssemblyBuilderProtocol) {
-        self.tabBarController = navigationController
+    init(tabBarController: UITabBarController, assemblyBuilder: AssemblyBuilderProtocol) {
+        self.tabBarController = tabBarController
         self.assemblyBuilder = assemblyBuilder
     }
     
