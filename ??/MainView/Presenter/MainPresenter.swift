@@ -15,7 +15,7 @@ protocol MainViewProtocol: AnyObject {
 
 protocol MainViewPresenterProtocol: AnyObject {
     var results: [Results]? { get set }
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
+    init(view: MainViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol)
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void)
     func openCamera(view: UIViewController)
     func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any])
@@ -25,12 +25,12 @@ class MainViewPresenter: MainViewPresenterProtocol {
     
     var results: [Results]?
     var view: MainViewProtocol?
-    var networkService: NetworkServiceProtocol
+    var photoFetcher: FetchingPhotosFromInternetProtocol
     var router: RouterProtocol?
 
-    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+    required init(view: MainViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol) {
         self.view = view
-        self.networkService = networkService
+        self.photoFetcher = photoFetcher
         self.router = router
     }
     
@@ -39,14 +39,7 @@ class MainViewPresenter: MainViewPresenterProtocol {
     }
     
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void) {
-        networkService.request(searchTerm: searchTerm) { [weak self] data, error in
-            if error != nil {
-                print("ERROR!!!?!>>!??!LJSHSDJAFCI*$*$")
-                completion(nil)
-            }
-            let decode = decodeJSON(type: APIResponse.self, from: data)
-            completion(decode)
-        }
+        photoFetcher.fetchPhoto(searchTerm: searchTerm, completion: completion)
     }
     
     func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {

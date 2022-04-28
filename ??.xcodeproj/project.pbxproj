@@ -10,7 +10,7 @@
 		438AF3A4958BF5DB0A141946 /* Pods______UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAF4F17C083D817B958DBAF /* Pods______UITests.framework */; };
 		8BF9CBF7E12460CD64290D6B /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CBBE6BAEF179DA9AED7655 /* Pods___.framework */; };
 		C1431E4B7E9D0999B9169B67 /* Pods___Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07507F1FCAFE7654E97196E /* Pods___Tests.framework */; };
-		CE30982827FB2FD70020D576 /* CatchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982727FB2FD70020D576 /* CatchPhotos.swift */; };
+		CE30982827FB2FD70020D576 /* CatchPhotosFromCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982727FB2FD70020D576 /* CatchPhotosFromCamera.swift */; };
 		CE30982B28044C5D0020D576 /* SixthViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982A28044C5D0020D576 /* SixthViewPresenter.swift */; };
 		CE30982F28044E3A0020D576 /* AnimationWithRoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30982E28044E3A0020D576 /* AnimationWithRoundedImage.swift */; };
 		CE309872280AEE410020D576 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE309871280AEE410020D576 /* CoreData.framework */; };
@@ -46,7 +46,7 @@
 		CEB49E0D27AD328B00C5E189 /* DetailedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB49E0C27AD328B00C5E189 /* DetailedCollectionViewCell.swift */; };
 		CEC4C0A927F4927C00A558B9 /* ViewAfterShootingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4C0A827F4927C00A558B9 /* ViewAfterShootingViewController.swift */; };
 		CEC4C0AD27F496CE00A558B9 /* ViewAfterShootingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4C0AC27F496CE00A558B9 /* ViewAfterShootingPresenter.swift */; };
-		CECDC0BA280F0D040068763F /* decodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC0B9280F0D040068763F /* decodeJSON.swift */; };
+		CECDC0BA280F0D040068763F /* fetchingPhotosFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDC0B9280F0D040068763F /* fetchingPhotosFromInternet.swift */; };
 		CED43A4F27DE421B004DE149 /* HeroViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED43A4E27DE421B004DE149 /* HeroViewPresenter.swift */; };
 		CED7F98327E8603700143C09 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7F98227E85EF400143C09 /* SixthViewController.swift */; };
 		CEE9CC1C27BAA9AA0076461F /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9CC1927BAA8EE0076461F /* FifthViewController.swift */; };
@@ -81,7 +81,7 @@
 		A4DF504B4838EBBFC9F54916 /* Pods-??.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-??.release.xcconfig"; path = "Target Support Files/Pods-??/Pods-??.release.xcconfig"; sourceTree = "<group>"; };
 		C10C04A52A08146D105FC8A5 /* Pods-??-??UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-??-??UITests.debug.xcconfig"; path = "Target Support Files/Pods-??-??UITests/Pods-??-??UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9CBBE6BAEF179DA9AED7655 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE30982727FB2FD70020D576 /* CatchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchPhotos.swift; sourceTree = "<group>"; };
+		CE30982727FB2FD70020D576 /* CatchPhotosFromCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchPhotosFromCamera.swift; sourceTree = "<group>"; };
 		CE30982A28044C5D0020D576 /* SixthViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewPresenter.swift; sourceTree = "<group>"; };
 		CE30982E28044E3A0020D576 /* AnimationWithRoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWithRoundedImage.swift; sourceTree = "<group>"; };
 		CE309871280AEE410020D576 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -121,7 +121,7 @@
 		CEB49E0C27AD328B00C5E189 /* DetailedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC4C0A827F4927C00A558B9 /* ViewAfterShootingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAfterShootingViewController.swift; sourceTree = "<group>"; };
 		CEC4C0AC27F496CE00A558B9 /* ViewAfterShootingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAfterShootingPresenter.swift; sourceTree = "<group>"; };
-		CECDC0B9280F0D040068763F /* decodeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decodeJSON.swift; sourceTree = "<group>"; };
+		CECDC0B9280F0D040068763F /* fetchingPhotosFromInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchingPhotosFromInternet.swift; sourceTree = "<group>"; };
 		CED43A4E27DE421B004DE149 /* HeroViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewPresenter.swift; sourceTree = "<group>"; };
 		CED7F98227E85EF400143C09 /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		CEE9CC1827BAA8EE0076461F /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,8 +300,8 @@
 				CEB49DE127AC375500C5E189 /* NetworkService.swift */,
 				CEB49DE327AC375500C5E189 /* Router.swift */,
 				CE3B9C7627CAF39B00C588C9 /* PanDirectionGestureRecognizer.swift */,
-				CE30982727FB2FD70020D576 /* CatchPhotos.swift */,
-				CECDC0B9280F0D040068763F /* decodeJSON.swift */,
+				CE30982727FB2FD70020D576 /* CatchPhotosFromCamera.swift */,
+				CECDC0B9280F0D040068763F /* fetchingPhotosFromInternet.swift */,
 				CEB49DEA27AC376200C5E189 /* Models */,
 			);
 			path = Service;
@@ -707,7 +707,7 @@
 				CEB49E0427AC38B600C5E189 /* SecondPresenter.swift in Sources */,
 				CEA6068C27CCD7230005639D /* ProfilePhotoViewController.swift in Sources */,
 				CEA6068A27CCBE3E0005639D /* ImagePreviewFullViewCell.swift in Sources */,
-				CE30982827FB2FD70020D576 /* CatchPhotos.swift in Sources */,
+				CE30982827FB2FD70020D576 /* CatchPhotosFromCamera.swift in Sources */,
 				CEB49E0527AC38B600C5E189 /* SearchControllerCollectionViewCell.swift in Sources */,
 				CEB49E0627AC38B600C5E189 /* SecondViewController.swift in Sources */,
 				CEB49E0727AC38B600C5E189 /* DetailedPresenter.swift in Sources */,
@@ -725,7 +725,7 @@
 				CEC4C0AD27F496CE00A558B9 /* ViewAfterShootingPresenter.swift in Sources */,
 				CEA6068627CCBA9E0005639D /* Present.swift in Sources */,
 				CEB49DBE27AC34C100C5E189 /* ChatViewController.swift in Sources */,
-				CECDC0BA280F0D040068763F /* decodeJSON.swift in Sources */,
+				CECDC0BA280F0D040068763F /* fetchingPhotosFromInternet.swift in Sources */,
 				CEB49DC327AC34C100C5E189 /* OptionViewController.swift in Sources */,
 				CEB49DB727AC34AF00C5E189 /* AppDelegate.swift in Sources */,
 				CEB49DB827AC34AF00C5E189 /* AssemblyModelBuilder.swift in Sources */,

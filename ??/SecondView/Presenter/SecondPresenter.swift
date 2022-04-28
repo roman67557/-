@@ -18,7 +18,7 @@ protocol SecondViewProtocol: AnyObject {
 
 protocol SecondViewPresenterProtocol: AnyObject {
     
-    init(view: SecondViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
+    init(view: SecondViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol)
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) -> Void)
     var results: [Results]? { get set }
     func setupIMG(img: [Results]?, view: UIViewController, index: Int)
@@ -29,24 +29,17 @@ class SecondPresenter: SecondViewPresenterProtocol {
     
     var results: [Results]?
     weak var view: SecondViewProtocol?
-    let networkService: NetworkServiceProtocol
+    let photoFetcher: FetchingPhotosFromInternetProtocol
     var router: RouterProtocol?
     
-    required init(view: SecondViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+    required init(view: SecondViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol) {
         self.view = view
-        self.networkService = networkService
+        self.photoFetcher = photoFetcher
         self.router = router
     }
     
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void) {
-        networkService.request(searchTerm: searchTerm) { [weak self] data, error in
-            if error != nil {
-                print("ERROR!!!?!>>!??!LJSHSDJAFCI*$*$")
-                completion(nil)
-            }
-            let decode = decodeJSON(type: APIResponse.self, from: data)
-            completion(decode)
-        }
+        photoFetcher.fetchPhoto(searchTerm: searchTerm, completion: completion)
     }
     
     func setupIMG(img: [Results]?, view: UIViewController, index: Int) {
