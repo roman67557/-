@@ -15,7 +15,7 @@ class FourthViewController: UIImagePickerController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.sourceType = .camera
     }
 
 }
@@ -24,6 +24,14 @@ extension FourthViewController: HeroViewProtocol {
     
     func tabBarButtonDidTap() {
         
+    }
+    
+}
+
+extension FourthViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        presenter?.receivePhoto(view: self, picker: picker, info: info)
     }
     
 }

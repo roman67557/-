@@ -15,6 +15,7 @@ protocol HeroViewProtocol {
 protocol HeroViewPresenterProtocol {
     init(view: HeroViewProtocol, router: RouterProtocol)
     func didTap(view: UIViewController)
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any])
 }
 
 class HeroViewPresenter: HeroViewPresenterProtocol {
@@ -29,6 +30,10 @@ class HeroViewPresenter: HeroViewPresenterProtocol {
     
     func didTap(view: UIViewController) {
         router?.openCameraView(view: view)
+    }
+    
+    func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {
+        catchPhotos(view: view, picker: picker, info: info)
     }
     
 }
