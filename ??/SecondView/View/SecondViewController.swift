@@ -151,7 +151,7 @@ extension SecondViewController: UINavigationControllerDelegate {
         case .push:
             guard let selectedLayout = self.collectionView.layoutAttributesForItem(at: IndexPath(item: index ?? 0, section: 0)) else { return nil }
             let selectedCellFrame = collectionView.convert(selectedLayout.frame, to: collectionView.superview)
-            return Present(pageIndex: index ?? 0, originFrame: selectedCellFrame)
+            return Present(pageIndex: index ?? 0, originFrame: selectedCellFrame, rounding: 0)
             
         case .pop:
             guard let selectedLayout = self.collectionView.layoutAttributesForItem(at: IndexPath(item: index ?? 0, section: 0)) else { return nil }

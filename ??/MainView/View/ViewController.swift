@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         myTableView.delegate = self
         myTableView.dataSource = self
         view.addSubview(myTableView)
-        
     }
     
     private func rightBarItems() {
@@ -49,7 +48,6 @@ class ViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [chatButton, cameraButton]
         cameraButton.tintColor = .black
         chatButton.tintColor = .black
-        
     }
     
     fileprivate func setTitleView() {
@@ -60,25 +58,28 @@ class ViewController: UIViewController {
         leftItem.setTitleTextAttributes([NSAttributedString.Key.font : billaBong], for: .highlighted)
         leftItem.tintColor = .black
         navigationItem.leftBarButtonItem = leftItem
-        
     }
     
     //MARK: - Methods
     @objc func moveToUp() {
+        
         myTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     @objc func switchToCamera(par: UIBarButtonItem) {
+        
         presenter?.openCamera(view: self)
         
     }
     
     @objc func moveToChat(par: UIBarButtonItem) {
+        
         let chatVC = ChatViewController()
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
     
     private func photoFetch() {
+        
         results = []
         presenter?.fetchImages(searchTerm: "Random") { [weak self] searchResult in
             guard let fetchedPhotos = searchResult else { return }
@@ -88,6 +89,7 @@ class ViewController: UIViewController {
     }
     
     private func configureRefreshControl() {
+        
         myTableView.refreshControl = self.refresh
         myTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
     }
@@ -106,6 +108,7 @@ extension ViewController: MainViewProtocol {
 //    }
     
     @objc func handleRefreshControl(sender: UIRefreshControl) {
+        
         self.results.shuffle()
         myTableView.reloadData()
         sender.endRefreshing()
@@ -116,6 +119,7 @@ extension ViewController: MainViewProtocol {
 extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         let currentImage = results[indexPath.item]
         guard let imageHeight = currentImage.height else { return 0.0 }
         guard let imageWidth = currentImage.width else { return 0.0 }
@@ -128,10 +132,12 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = myTableView.dequeueReusableCell(withIdentifier: ViewControllerCell.identifier, for: indexPath) as? ViewControllerCell
         let photo = results[indexPath.item]
         cell?.results = photo
@@ -143,6 +149,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         presenter?.receivePhoto(view: self, picker: picker, info: info)
     }
     

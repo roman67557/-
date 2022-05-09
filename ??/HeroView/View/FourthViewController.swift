@@ -16,6 +16,7 @@ class FourthViewController: UIImagePickerController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sourceType = .camera
+        self.delegate = self
     }
 
 }

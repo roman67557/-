@@ -13,12 +13,14 @@ class Present: NSObject, UIViewControllerAnimatedTransitioning {
     private let indexPath: IndexPath
     private let originFrame: CGRect
     private let duration: TimeInterval = 0.3
+    private let rounding: CGFloat
 //    private let cell: UIView
 
-    init(pageIndex: Int, originFrame: CGRect) {
+    init(pageIndex: Int, originFrame: CGRect, rounding: CGFloat) {
         
         self.indexPath = IndexPath(item: pageIndex, section: 0)
         self.originFrame = originFrame
+        self.rounding = rounding
         super.init()
     }
 
@@ -43,6 +45,7 @@ class Present: NSObject, UIViewControllerAnimatedTransitioning {
         background.alpha = 0
         
         let viewToAnimate = UIImageView(frame: originFrame)
+        viewToAnimate.layer.cornerRadius = rounding
         viewToAnimate.image = fromView.searchPageImageView.image
         viewToAnimate.contentMode = .scaleAspectFill
         viewToAnimate.clipsToBounds = true

@@ -15,6 +15,7 @@ class ViewControllerCell: UITableViewCell {
     var img: UIImage?
     
     var results: Results? {
+        
         didSet {
             let photoUrl = results?.urls.regular
             guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
@@ -31,25 +32,28 @@ class ViewControllerCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
+        
         fatalError("init(coder:) has not been implemented")
     }
     
     func setupImageView() {
+        
         cellImageView.backgroundColor = .systemGray5
         self.addSubview(cellImageView)
     }
     
     func setImageViewConstraints() {
+        
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
         cellImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         cellImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         cellImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         cellImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        cellImageView.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive = true
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
         cellImageView.image = nil
     }
     

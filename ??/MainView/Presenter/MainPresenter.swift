@@ -14,11 +14,13 @@ protocol MainViewProtocol: AnyObject {
 }
 
 protocol MainViewPresenterProtocol: AnyObject {
+    
     var results: [Results]? { get set }
     init(view: MainViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol)
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void)
     func openCamera(view: UIViewController)
     func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any])
+    
 }
 
 class MainViewPresenter: MainViewPresenterProtocol {
@@ -29,20 +31,24 @@ class MainViewPresenter: MainViewPresenterProtocol {
     var router: RouterProtocol?
 
     required init(view: MainViewProtocol, photoFetcher: FetchingPhotosFromInternetProtocol, router: RouterProtocol) {
+        
         self.view = view
         self.photoFetcher = photoFetcher
         self.router = router
     }
     
     func openCamera(view: UIViewController) {
+        
         router?.openCameraView(view: view)
     }
     
     func fetchImages(searchTerm: String, completion: @escaping (APIResponse?) ->Void) {
+        
         photoFetcher.fetchPhoto(searchTerm: searchTerm, completion: completion)
     }
     
     func receivePhoto(view: UIViewController, picker: UIImagePickerController, info: [UIImagePickerController.InfoKey : Any]) {
+        
         catchPhotos(view: view, picker: picker, info: info)
     }
     
