@@ -9,7 +9,7 @@ import AVFoundation
 import UIKit
 import CoreFoundation
 
-class FourthViewController: UIImagePickerController {
+class FourthViewController: UIViewController {
     
     var presenter: HeroViewPresenterProtocol?
 
